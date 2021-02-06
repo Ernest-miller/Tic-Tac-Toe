@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {color: darkgoldenrod;
+            background: darkred;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 { text-align: center; }
+
+        #gameBoard {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            width: 600px;
+            height: 600px;
+            margin: 60px auto;
+            font-size: 180px;
+        }
+        .tile {
+            width: calc(100%/3 - 2px);
+            height: calc(100%/3 - 2px);
+            border: 1px solid darkgoldenrod;
+        }
+        .tile:hover {
+            text-align: center;
+            color: darkred;
+            background: black;
+        }
+        .scoreBoard {
+            text-align: center;
+            list-style: none;
+            padding: 0;
+        }
+        .x:before {
+            content: 'X';
+            color: red;
+            font-size: 180px;
+        }
+        .o:before {
+            content: 'O';
+            color: red;
+            font-size: 180px;
+        }
+
+        .strike {
+            position: absolute;
+            top: 97px;
+            left: 9px;
+            width: 583px;
+            border-top: 5px solid red;
+        }
+        .row2 {
+            top: 297px;
+        }
+        .row3 {
+            top: 497px;
+        }
+        .horiz {
+            transform: rotate(90deg);
+            transform-origin: left;
+            left: 97px;
+            top: 6px;
+        }
+        .col2 {
+            left: 297px;
+        }
+        .col3 {
+            left: 497px
+        }
+            .col3 {
+            left: 497px;
+        }
+        .diag1 {
+            top: 6px;
+            width: 821px;
+            transform: rotate(45deg);
+            transform-origin: left;
+        }
+        .diag2 {
+            top: 6px; left: -230px;
+            width: 821px;
+            transform: rotate(-45deg);
+            transform-origin: right;
+        }
+    </style>
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <div id="gameBoard">
+        <div id="strike"></div>
+    </div>
+    <div class="scoreBoard">
+        <li>Player 1: <span id="player1">0</span></li>
+        <li>Player 2: <span id="player2">0</span></li>
+        <li>Cat Game: <span id="catgame">0</span></li>
+    </div>
+    <button id="reset">Reset Board</button>
+    <button id="2player">2 Player</button>
+    <button id="vscomputer">VS Computer</button>
+    <!-- WITHOUT COMPUTER -->
+    <!-- <script src="app.js"></script> -->
+    
+    <!-- WITH COMPUTER -->
+    <script src="app_ai.js"></script>
+</body>
+</html>
